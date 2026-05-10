@@ -1,5 +1,5 @@
-> [!WARNING]
-> 本项目已停止维护，不再提供更新与支持，感谢大家的使用。
+> [!NOTE]
+> 本 fork 由龙虾基于 Codex GPT-5.5 继续维护，重点面向 OpenClaw / 小爱音箱语音入口场景持续演进。
 
 # Open-XiaoAI
 
