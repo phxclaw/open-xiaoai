@@ -43,4 +43,14 @@ SSH (`dropbear`) starts before `rc.local`, so bootstrap failure should not block
 
 `miio_did_fix.c` is a small LD_PRELOAD helper used during local debugging for Xiaomi DID overflow cases. It redirects `json_object_new_int()` to `json_object_new_int64()` when the value hits `2147483647`, so newer DID values do not get truncated by 32-bit integer handling.
 
-This file is kept as source/reference only; it is not injected into firmware by default.
+**生产运行状态：** 已在 Xiaomi Smart Speaker Pro (OH2P 1.58.6) 设备上通过以下方式启用并稳定运行：
+
+- 编译产物：`/data/openclaw/libmiio_did_fix.so`
+- 挂载方式：`LD_PRELOAD=/data/openclaw/libmiio_did_fix.so /usr/bin/miio_helper`
+- 生效进程：`/usr/bin/miio_helper`（PID 3600）已加载该 shim
+
+如需重新编译，请确保使用设备对应的 ARM 工具链：
+
+```bash
+gcc -shared -fPIC -o libmiio_did_fix.so miio_did_fix.c
+```
