@@ -54,3 +54,12 @@ SSH (`dropbear`) starts before `rc.local`, so bootstrap failure should not block
 ```bash
 gcc -shared -fPIC -o libmiio_did_fix.so miio_did_fix.c
 ```
+
+## 固件 patch 状态
+
+`05-openclaw-bootstrap.sh` 会在打包固件时同时执行两件事：
+
+1. 注入 OpenClaw bootstrap：`/usr/bin/openclaw-bootstrap.sh`、可选的 `/usr/share/openclaw/client`。
+2. 注入 DID shim：`/usr/share/openclaw/libmiio_did_fix.so`，并把 `/etc/init.d/miio` 中的 `miio_helper` 启动命令改为带 `LD_PRELOAD`。
+
+因此新打出来的 OpenClaw 固件会默认让 `miio_helper` 加载 DID compatibility shim。
