@@ -8,6 +8,8 @@
 > 本 fork 基于原版 `idootop/open-xiaoai` 做升级维护，重点补充了面向 OpenClaw 的 OH2P 固件 bootstrap patch：把 OpenClaw client 恢复能力、启动脚本恢复、server 地址自恢复、时间同步和 `/tmp/mico_aivs_lab/usock` 兼容路径写入固件启动流程，方便把小爱音箱作为稳定的 OpenClaw 语音入口。
 >
 > 新增内容主要在 `packages/client-patch/patches/OpenClaw/` 和 `docs/openclaw-bootstrap/`，可用于基于 `OH2P_1.58.6_patched.squashfs` 重新打包 OpenClaw bootstrap 固件。
+>
+> 当前可用固件下载：[`OH2P_1.58.6_openclaw-bootstrap-v2.squashfs`](https://github.com/phxclaw/open-xiaoai/releases/download/OH2P_1.58.6-openclaw-bootstrap-v2/OH2P_1.58.6_openclaw-bootstrap-v2.squashfs)，校验文件：[`SHA256`](https://github.com/phxclaw/open-xiaoai/releases/download/OH2P_1.58.6-openclaw-bootstrap-v2/OH2P_1.58.6_openclaw-bootstrap-v2.squashfs.sha256)。Release 页面：[OH2P_1.58.6-openclaw-bootstrap-v2](https://github.com/phxclaw/open-xiaoai/releases/tag/OH2P_1.58.6-openclaw-bootstrap-v2)。
 
 ![](./docs/images/cover.jpg)
 
